@@ -1,0 +1,23 @@
+/* variables.scss */
+@import "~@angular/material/theming";
+
+//theme colors
+$primary: mat-palette($mat-indigo);
+$accent: mat-palette($mat-pink, A200, A100, A400);
+$warn: mat-palette($mat-red);
+
+//colors variables
+$dark: #000000;
+$light: #FFFFFF;
+
+//text colors with opacity
+$primary-dark-text: rgba($dark, 87%);
+$secondary-dark-text: rgba($dark, 54%);
+$disabled-dark-text: rgba($dark, 38%);
+$primary-light-text: rgba($light, 100%);
+$secondary-light-text: rgba($light, 70%);
+$disabled-light-text: rgba($light, 50%);
+
+//dividers colors
+$dividers-dark: rgba($dark, 12%);
+$dividers-light: rgba($light, 12%);

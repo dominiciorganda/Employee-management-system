@@ -1,0 +1,27 @@
+<input type="file"  (change)="onFileChanged($event)">
+<br>
+<button
+mat-raised-button
+color="warn"
+style="margin: 0px"
+(click)="onUpload()" value="upload"
+>
+Upload image
+</button>
+<br> <br>
+
+
+<br> <br>
+        <input type="text" mat-raised-button
+        color="warn"
+        style="margin: 0px" id="name" placeholder="image name" [(ngModel)]="imageName"
+        name="name" />
+        <input type="button" mat-raised-button
+        color="warn"
+        style="margin: 0px" (click)="getImage()" value="Get Image">
+
+
+        <div *ngIf=retrievedImage>
+            <img [src]="retrievedImage">
+            </div>
+       

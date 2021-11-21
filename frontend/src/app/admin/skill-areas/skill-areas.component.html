@@ -1,0 +1,28 @@
+<button mat-raised-button color="primary" routerLink="../">Go back</button>
+<button mat-raised-button color="accent" (click)="enableAddSkillArea()">
+  Add new Skill Area
+</button>
+
+<mat-card *ngIf="isEnabled">
+  <form class="example-form">
+    <h3>New skill area</h3>
+    <mat-form-field class="example-full-width">
+      <mat-label>Enter skill area name</mat-label>
+      <textarea matInput placeholder="E.g. Communication"></textarea>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="warn"
+      style="margin: 0px"
+      (click)="handleSave()"
+    >
+      Save
+    </button>
+  </form>
+</mat-card>
+
+<mat-list role="list">
+  <mat-list-item role="listitem">Item 1</mat-list-item>
+  <mat-list-item role="listitem">Item 2</mat-list-item>
+  <mat-list-item role="listitem">Item 3</mat-list-item>
+</mat-list>

@@ -1,0 +1,86 @@
+<mat-toolbar class="header" color="primary">
+  <div class="header__menu-icon" fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/login"
+      ><img class="header__logo-img" src="../../../assets/pc-logo.png"
+    /></a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <!--      Starting Menu      -->
+    <ul
+      *ngIf="!userLoggedIn"
+      fxLayout
+      fxLayoutGap="8px"
+      class="navigation-items"
+    >
+      <li routerLinkActive="active-link">
+        <a routerLink="/login">Login</a>
+      </li>
+      <li routerLinkActive="active-link">
+        <a routerLink="/register">Register</a>
+      </li>
+      <li routerLinkActive="active-link">
+        <a routerLink="/admin">Admin</a>
+      </li>
+    </ul>
+
+    <!-- !!!!!routes and new menu items should be added during actual implementation-->
+
+    <!--      Employee Menu      -->
+    <ul
+      *ngIf="userLoggedIn?.role === 'Employee'"
+      fxLayout
+      fxLayoutGap="8px"
+      class="navigation-items"
+    >
+      <li [matMenuTriggerFor]="dropdownmenu">
+        <a>
+          <mat-icon>account_circle</mat-icon>
+          <span></span>
+        </a>
+      </li>
+    </ul>
+
+    <!--      Supervisor Menu      -->
+    <ul
+      *ngIf="userLoggedIn?.role === 'Supervisor'"
+      fxLayout
+      fxLayoutGap="8px"
+      class="navigation-items"
+    >
+      <li [matMenuTriggerFor]="dropdownmenu">
+        <a>
+          <mat-icon>supervisor_account</mat-icon>
+          <span> </span>
+        </a>
+      </li>
+    </ul>
+
+    <!--      Administrator Menu      -->
+    <ul
+      *ngIf="userLoggedIn?.role === 'Administrator'"
+      fxLayout
+      fxLayoutGap="8px"
+      class="navigation-items"
+    >
+      <li [matMenuTriggerFor]="dropdownmenu">
+        <a>
+          <mat-icon>admin_panel_settings</mat-icon>
+          <span></span>
+        </a>
+      </li>
+    </ul>
+
+    <!--    Logout dropdown menu    -->
+    <mat-menu #dropdownmenu="matMenu" class="drop-down-menu" xPosition="before">
+      <button mat-menu-item (click)="logout()">
+        <mat-icon class="drop-down-menu__icon">person_remove</mat-icon>
+        <span class="drop-down-menu__option">Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

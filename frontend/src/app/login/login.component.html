@@ -1,0 +1,45 @@
+<div class="main-div">
+  <mat-card>
+    <mat-card-title style="margin-bottom: 20px">Login</mat-card-title>
+    <mat-card-content class="text-center">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <p>
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              autocomplete="off"
+              [(ngModel)]="email"
+              name="email"
+            />
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              formControlName="password"
+              autocomplete="off"
+              [(ngModel)]="password"
+              name="password"
+            />
+          </mat-form-field>
+        </p>
+
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+
+        <div class="button">
+          <button type="submit" mat-raised-button color="primary">Login</button>
+        </div>
+      </form>
+    </mat-card-content>
+    <a routerLink="/register">Already have an account?</a>
+  </mat-card>
+</div>

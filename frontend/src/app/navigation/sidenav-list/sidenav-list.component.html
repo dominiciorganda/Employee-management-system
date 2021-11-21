@@ -1,0 +1,24 @@
+<mat-nav-list>
+  <!--      Starting Menu      -->
+  <ul *ngIf="true" class="navigation-items">
+    <li
+      routerLinkActive="active-link"
+      routerLink="/login"
+      (click)="onSidenavClose()"
+    >
+      <a mat-list-item>
+        <mat-icon>login</mat-icon> <span class="nav-caption">Login</span>
+      </a>
+    </li>
+    <li
+      routerLinkActive="active-link"
+      routerLink="/register"
+      (click)="onSidenavClose()"
+    >
+      <a mat-list-item>
+        <mat-icon>how_to_reg</mat-icon>
+        <span class="nav-caption">Register</span>
+      </a>
+    </li>
+  </ul>
+</mat-nav-list>
